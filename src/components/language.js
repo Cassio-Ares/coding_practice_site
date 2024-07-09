@@ -6,3 +6,12 @@ export const Languages = {
   csharp: "6.12.0",
   php: "8.2.3",
 };
+
+export const CODE_SNIPPETS = {
+  javascript: `\nfunction greet(name) {\n\t console.log(Hello, " + name + "!"); \n}\n\ngreet(name);\n`,
+  typescript: `ntype Params = {\n\tname: string; \n}\n\nfunction greet(data:Params) {\n\tconsole.log("Hello, " + data.name + "!"); \n}\n\ngreet({name: "name"});\n`,
+  python: `\ndef greet(name):\n\tprint("Hello, " + name + "!")\n\ngreet(name)`,
+  java: `\npublic class HelloWorld {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello World"); \n\t}\n}\n`,
+  csharp: `using System; \n\nnamesspace HelloWord\n{\n\tclass Hello {\n\t\tstatic void Main(String[] args) {\n\t\t\tConsole.WhiteLine("Hello Word in C#"); \n\t\t}\n\t}\n}\n`,
+  php: "<?php\n\n$name = 'Hello'; \necho $name;\n",
+};
