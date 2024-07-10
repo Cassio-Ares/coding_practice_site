@@ -26,7 +26,7 @@ export const LanguageSelector = ({languageType, onSelect}:LanguageSelectorProps)
 
   return (
     <S.Box>
-      <S.FormControl fullWidth>
+      <S.FormControl>
         <S.InputLabel id="demo-simple-select-label">Linguagem</S.InputLabel>
         <S.Select
           labelId="demo-simple-select-label"

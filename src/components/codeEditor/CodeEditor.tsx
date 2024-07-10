@@ -4,7 +4,7 @@ import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react"
 import { useRef, useState } from "react"
 import { LanguageSelector } from "../languageSelector/LanguageSelector"
 import { CODE_SNIPPETS } from "../language"
-import { ContainerDiv, ContainerEditor, ContainerMain, ContainerRes } from "./stile"
+import {  ContainerEditor, ContainerMain, ContainerRes } from "./style"
 import { Return } from "../return/Return"
 
 
@@ -40,10 +40,9 @@ export const CodeEditor = () => {  // to do tipar
                     value={value}
                     onChange={(value: any) => setValeu(value)} />
             </ContainerEditor>
-            <ContainerRes>
-                <Return  editorRef={ editorRef} language={language}  />
-            </ContainerRes>
-            
+        
+            <Return  editorRef={ editorRef} language={language}  />
+          
         </ContainerMain>
     )
 }
