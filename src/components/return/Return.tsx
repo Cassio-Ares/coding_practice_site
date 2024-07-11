@@ -1,7 +1,7 @@
 'use client'
 import * as S from './styles';
 import { useRef, useState, MouseEvent } from 'react';
-import { executeCode } from '../api.js';
+import { executeCode } from '../api';
 
 export const Return = ({ editorRef, language }) => {
     const [outPut, setOutPut] = useState(null);

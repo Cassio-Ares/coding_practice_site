@@ -4,11 +4,12 @@ import { Table_text } from "@/components/table_text/Table_text";
 import { QuestionOneTest } from "@/components/questions/QuestionOneTest";
 
 
+
 export default function Home() {
   return (
     <main className={styles.main}>
-     <QuestionOneTest />
-     {/* <CodeEditor/>  */}
+     {/* <QuestionOneTest /> */}
+     {/* <CodeEditor/>*/}  
     </main>
   );
 }

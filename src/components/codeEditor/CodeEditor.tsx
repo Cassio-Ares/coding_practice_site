@@ -8,12 +8,12 @@ import {  ContainerEditor, ContainerMain, ContainerRes } from "./style"
 import { Return } from "../return/Return"
 
 
-export const CodeEditor = () => {  // to do tipar 
+export const CodeEditor = () => {  
     const editorRef = useRef()
-    const [value, setValeu] = useState()
-    const [language, setLanguage] = useState('javascript')
+    const [value, setValeu] = useState<string>()
+    const [language, setLanguage] = useState<string>('javascript')
 
-    const onMount = (editor: any) => { // faz com que ao abri a pagina ja crie um cursor para digitar no editor
+    const onMount = (editor: any) => { 
         editorRef.current = editor;
         editor.focus()
     }
@@ -47,4 +47,3 @@ export const CodeEditor = () => {  // to do tipar
     )
 }
 
-//vs-dark é um theme é especifico do monaco

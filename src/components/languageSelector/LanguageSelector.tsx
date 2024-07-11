@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SelectChangeEvent } from '@mui/material/Select';
 
 //import das linguagens
-import { Languages } from '../language.js';
+import { Languages } from '../language';
 
 const languageArray: Array<[string, string]> = Object.entries(Languages) // transforma o obj em um array
 
