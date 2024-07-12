@@ -1,15 +1,26 @@
 import styled from '@emotion/styled'
 
+import BoxMUI from '@mui/material/Box';
 import TabsMUI from '@mui/material/Tabs';
 import TabMUI from '@mui/material/Tab';
-import BoxMUI from '@mui/material/Box';
 
-
-export const Tabs = styled(TabsMUI)``;
-
-export const Tab = styled(TabMUI)`
- color: #fff;
- border-bottom: 2px solid #fff;
+export const StyledBox = styled(BoxMUI)`
+  border: 3px solid #fff;
+  height: 100%;
 `;
 
-export const Box = styled(BoxMUI)``;
+export const StyledTabs = styled(TabsMUI)`
+  color: #fff;
+`;
+
+export const StyledTab = styled(TabMUI)`
+  color: #fff;
+`;
+
+export const TabPanelContent = styled.div`
+  padding: 16px;
+  height: 100vh; 
+  overflow-y: auto;
+  scrollbar-width: thin; 
+  scrollbar-color: #888 #fff; 
+`;

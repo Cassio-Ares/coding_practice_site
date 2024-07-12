@@ -1,15 +1,12 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
+import EditorCd from "@monaco-editor/react";
 
-export const ContainerMain = styled.div`
- width: clamp(500px, 50%, 900px);
-`
-export const ContainerEditor = styled.div`
-  position: relative;
-  overflow: hidden;
-  padding: 10px;
-`
+export const Main_Code = styled.main``;
 
-export const ContainerRes = styled.div`
- padding-left: 12px;
+export const Container_main_text = styled.div``;
 
-`
+export const ContainerMain = styled.div``;
+
+export const ContainerEditor = styled.div``;
+
+export const ContainerRes = styled.div``;

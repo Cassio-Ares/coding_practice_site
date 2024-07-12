@@ -1,8 +1,7 @@
 'use client'
 
-import * as S from './styles'
-
 import { ReactNode, SyntheticEvent, useState } from 'react';
+import { StyledBox, StyledTab, StyledTabs, TabPanelContent } from './styles';
 
 interface TabPanelProps {
   children?: ReactNode;
@@ -21,7 +20,7 @@ function CustomTabPanel(props: TabPanelProps) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <S.Box sx={{ p: 3 }}>{children}</S.Box>}
+      {value === index && <TabPanelContent>{children}</TabPanelContent>}
     </div>
   );
 }
@@ -48,15 +47,15 @@ export const Table_text = ({ question, responseJS, responseTS, methods }: Table)
   };
 
   return (
-    <S.Box sx={{ width: '50%' }}>
-      <S.Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <S.Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <S.Tab label="Desafio" {...a11yProps(0)} />
-          <S.Tab label="Respostas em JS" {...a11yProps(1)} />
-          <S.Tab label="Respostas em TS" {...a11yProps(2)} />
-          <S.Tab label=" Metodos para ajudar" {...a11yProps(3)} />
-        </S.Tabs>
-      </S.Box>
+    <StyledBox sx={{ width: '50%' }} >
+      <StyledBox style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', position: 'relative' }} sx={{ borderBottom: 1, borderColor: 'divider', borderTop: 1 }}>
+        <StyledTabs value={value} onChange={handleChange} aria-label="basic tabs example">
+          <StyledTab label="Desafio" {...a11yProps(0)} />
+          <StyledTab label="Respostas em JS" {...a11yProps(1)} />
+          <StyledTab label="Respostas em TS" {...a11yProps(2)} />
+          <StyledTab label="Metodos para ajudar" {...a11yProps(3)} />
+        </StyledTabs>
+      </StyledBox>
       <CustomTabPanel value={value} index={0}>
         {question}
       </CustomTabPanel>
@@ -69,6 +68,6 @@ export const Table_text = ({ question, responseJS, responseTS, methods }: Table)
       <CustomTabPanel value={value} index={3}>
         {methods}
       </CustomTabPanel>
-    </S.Box>
+    </StyledBox>
   );
 }

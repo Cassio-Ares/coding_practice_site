@@ -9,6 +9,7 @@ import SelectMUI from '@mui/material/Select';
 
 export const Box = styled(BoxMUI)`
  width: 400px;
+ height: 35px;
  `;
 
 export const InputLabel = styled(InputLabelMUI)`
@@ -18,14 +19,11 @@ export const InputLabel = styled(InputLabelMUI)`
 
 export const MenuItem = styled(MenuItemMUI)``;
 
-export const FormControl = styled(FormControlMUI)`
-width: 400px;
-margin-bottom: -10px
-`;
+export const FormControl = styled(FormControlMUI)``;
 
 export const Select = styled(SelectMUI)`
 color: #fff;
-margin-left: 80px;
+margin-left: 75px;
 margin-top: -20px;
 &.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: transparent;

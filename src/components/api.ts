@@ -5,10 +5,10 @@ const API = axios.create({
     baseURL: "https://emkc.org/api/v2/piston"
 });
 
-// Define the type for the languages, based on the keys of Languages object
+
 type Language = keyof typeof Languages;
 
-// Define the type for the response data structure if known
+
 interface ExecuteResponse {
     run: {
         stdout: string;

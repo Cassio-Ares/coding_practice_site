@@ -2,7 +2,7 @@
 import * as S from './styled'
 
 import * as React from 'react';
-import { questions } from '../questions';
+import { QUESTIONS } from '../questions';
 import Link from 'next/link';
 
 
@@ -14,7 +14,7 @@ export const HomeComp = () => {
         <S.H3>Site criado para se praticar logica, metodos e funções das linguagens JS e TS</S.H3>
         <S.Content_home>
           {
-            questions.map((question, id) => (
+            QUESTIONS.map((question, id) => (
               <S.Accordion key={id} >
                 <S.AccordionSummary
                   expandIcon={<S.ExpandMoreIcon />}

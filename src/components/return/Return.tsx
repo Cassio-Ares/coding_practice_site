@@ -9,6 +9,7 @@ export const Return = ({ editorRef, language }) => {
     const [height, setHeight] = useState<number>(100);
     const containerRef = useRef<HTMLDivElement>(null);
 
+
     const handleMouseDown = (e: MouseEvent) => {
         e.preventDefault();
         const startY = e.clientY;
@@ -37,7 +38,7 @@ export const Return = ({ editorRef, language }) => {
         try {
             setIsLoading(true);
             const { run: result } = await executeCode(language, sourceCode);
-            setOutPut(result.output);
+            setOutPut(result.output);  // to do error não aceita ts???
         } catch (error) {
             console.log(error.message);
             // alert(
@@ -63,7 +64,7 @@ export const Return = ({ editorRef, language }) => {
             <div className="content">
                 {/* Conteúdo do container */}
             </div>
-            <div>
+            <S.Container_Out>
                 OutPut
                 <button onClick={runCode} disabled={isLoading}>
                     {isLoading ? 'Running...' : 'Run Code'}
@@ -71,7 +72,7 @@ export const Return = ({ editorRef, language }) => {
                 <div>
                     {outPut ? outPut : "Click 'Run Code' to see the output here"}
                 </div>
-            </div>
+            </S.Container_Out>
         </S.Container_return>
     );
 };
