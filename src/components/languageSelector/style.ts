@@ -10,15 +10,6 @@ import SelectMUI from '@mui/material/Select';
 export const Box = styled(BoxMUI)`
  height: 52px;
 
- &::after {
-    content: '';
-    width: 690px;
-    position: absolute;
-    bottom: -2px; 
-    left: -10px; 
-    right: -10px; 
-    border-bottom: 2px solid #fff;
-}
  `;
 
 export const InputLabel = styled(InputLabelMUI)`

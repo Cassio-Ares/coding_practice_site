@@ -1,36 +1,19 @@
 'use client'
-import * as S from './styles';
-import { useRef, useState, MouseEvent } from 'react';
+
+import {  useState } from 'react';
 import { executeCode } from '../api';
+import {  Btn_Res, Container_Btn, Container_Res, Container_return } from './styles';
+import { Monaco } from '@monaco-editor/react';
+
+interface ReturnProps{
+    editorRef:Monaco | null;
+    language:string;
+}
 
 export const Return = ({ editorRef, language }) => {
     const [outPut, setOutPut] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [height, setHeight] = useState<number>(100);
-    const containerRef = useRef<HTMLDivElement>(null);
-
-
-    const handleMouseDown = (e: MouseEvent) => {
-        e.preventDefault();
-        const startY = e.clientY;
-        const startHeight = containerRef.current?.offsetHeight || 0;
-
-        const onMouseMove = (moveEvent: MouseEvent) => {
-            const newHeight = startHeight + (startY - moveEvent.clientY);
-            if (newHeight > 0) {
-                setHeight(newHeight);
-            }
-        };
-
-        const onMouseUp = (): void => {
-            document.removeEventListener('mousemove', onMouseMove as any);
-            document.removeEventListener('mouseup', onMouseUp);
-        };
-
-        document.addEventListener('mousemove', onMouseMove as any);
-        document.addEventListener('mouseup', onMouseUp);
-    };
-
+  
     const runCode = async () => {
         const sourceCode = editorRef.current.getValue();
         if (!sourceCode) return;
@@ -53,39 +36,17 @@ export const Return = ({ editorRef, language }) => {
     };
 
     return (
-        <S.Container_return
-            ref={containerRef}
-            className="resizable-container"
-            style={{ height: `${height}px` }}
-        >
-            <S.Content
-                onMouseDown={handleMouseDown}
-            />
-            <div className="content">
-                {/* Conteúdo do container */}
-            </div>
-            <S.Container_Out>
-                OutPut
-                <button onClick={runCode} disabled={isLoading}>
+              <Container_return>
+               <Container_Btn>
+                  <Btn_Res onClick={runCode} disabled={isLoading}>
                     {isLoading ? 'Running...' : 'Run Code'}
-                </button>
-                <div>
+                </Btn_Res>
+               </Container_Btn>
+               
+                <Container_Res>
                     {outPut ? outPut : "Click 'Run Code' to see the output here"}
-                </div>
-            </S.Container_Out>
-        </S.Container_return>
+                </Container_Res>
+            </Container_return>
     );
 };
 
-{/* <div>
-            OutPut
-            <button onClick={runCode} disabled={isLoading}>
-                {isLoading ? 'Running...' : 'Run Code'}
-            </button>
-            <div>
-                {
-                    outPut ? outPut : "Click 'Run Code' to see the output here"
-                }
-            </div>
-
-        </div> */}

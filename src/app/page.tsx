@@ -8,7 +8,9 @@ import { QuestionOneTest } from "@/components/questions/QuestionOneTest";
 export default function Home() {
   return (
     <main className={styles.main}>
-     <Table_text
+
+     <CodeEditor params={'0'}/>
+     {/* <Table_text
       question="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 
        sssssssssssssssssssssssssssssssssssssssssssssssssssss
        ssssssssssssssssssssssssssssssssssssssssssssssssssssssss
@@ -161,7 +163,7 @@ export default function Home() {
        ssssssssssssssssssssssssssssssssssssssssssssssssssssssss
        ssssssssssssssssssssssssssssssssssssssssssssssss
        "
-       methods="" responseJS="" responseTS=""/>
+       methods="" responseJS="" responseTS=""/> */}
     </main>
   );
 }

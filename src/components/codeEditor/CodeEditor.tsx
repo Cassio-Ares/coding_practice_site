@@ -1,16 +1,21 @@
 'use client'
 
-import Editor from "@monaco-editor/react"
+import Editor, { Monaco } from "@monaco-editor/react"
 import { useRef, useState } from "react"
 import { LanguageSelector } from "../languageSelector/LanguageSelector"
-import { ContainerEditor, ContainerMain, ContainerRes, Main_Code } from "./style"
+import { Container_select, ContainerRes, Main_Code } from "./style"
 import { Return } from "../return/Return"
 import { QUESTIONS } from '../questions'
-import { Table_text } from "../table_text/Table_text"
+
+interface CodeProps {
+    params: {
+        id: number;
+    }
+}
 
 
-export const CodeEditor = ({ params }) => {
-    const editorRef = useRef()
+export const CodeEditor = ({ params }: CodeProps) => {
+    const editorRef = useRef<Monaco | null>()
     const [value, setValeu] = useState<string>()
     const [language, setLanguage] = useState<string>('javascript')
 
@@ -26,25 +31,22 @@ export const CodeEditor = ({ params }) => {
 
     return (
         <Main_Code>
-         <Table_text question={QUESTIONS[params].question} responseJS="" responseTS="" methods="" /> 
-            <ContainerMain>
-                <ContainerEditor>
-                    <div style={{ position:'absolute', zIndex: '2', top:'0'}}>
-                        <LanguageSelector languageType={language} onSelect={onSelectLanguage} />                       
-                    </div>
-                    < Editor 
-                        height=" 90vh"
-                        theme="vs-dark"
-                        language={language}
-                        defaultValue="// some comment"
-                        onMount={
-                            onMount
-                        }
-                        value={value}
-                        onChange={(value: any) => setValeu(value)} />
-                </ContainerEditor>
-                {/* <Return editorRef={editorRef} language={language} /> */}
-            </ContainerMain>
+            <Container_select>
+                <LanguageSelector languageType={language} onSelect={onSelectLanguage} />
+            </Container_select>
+                < Editor
+                    height=" 70vh"
+                    theme="vs-dark"
+                    language={language}
+                    defaultValue="// some comment"
+                    onMount={
+                        onMount
+                    }
+                    value={value}
+                    onChange={(value: any) => setValeu(value)} />
+            <ContainerRes>
+                <Return editorRef={editorRef} language={language} />
+            </ContainerRes>
         </Main_Code>
     )
 }
