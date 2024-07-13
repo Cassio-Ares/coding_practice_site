@@ -5,8 +5,17 @@ import TabsMUI from '@mui/material/Tabs';
 import TabMUI from '@mui/material/Tab';
 
 export const StyledBox = styled(BoxMUI)`
-  border: 3px solid #fff;
-  height: 100%;
+  border-bottom: 2px solid #888;
+  border-top: 1px solid #888;
+  background: #333333;
+
+  &::before{
+    content: "";
+    border-left: 2px solid #888;
+    position: absolute;
+    height: 50px;
+    left:0;
+  }
 `;
 
 export const StyledTabs = styled(TabsMUI)`
@@ -18,9 +27,9 @@ export const StyledTab = styled(TabMUI)`
 `;
 
 export const TabPanelContent = styled.div`
-  padding: 16px;
-  height: 100vh; 
+  height: 90vh; 
   overflow-y: auto;
   scrollbar-width: thin; 
   scrollbar-color: #888 #fff; 
+  border-left: 2px solid #888;
 `;

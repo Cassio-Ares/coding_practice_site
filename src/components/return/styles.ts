@@ -24,9 +24,8 @@ export const Container_Res = styled.div`
 
 export const Btn_Res = styled.button`
  background: #928BF9;
- position: absolute;
- left: 93%;
- top: 3px;
+ margin-top: 3px;
+ margin-left: 590px;
  padding: 2px 7px;
  border-radius: 5px;
 

@@ -1,5 +1,6 @@
 import { CodeEditor } from "@/components/codeEditor/CodeEditor";
 import { Table_text } from "@/components/table_text/Table_text";
+import './styles.css';
 
 interface CodeProps{
     params:{
@@ -10,9 +11,9 @@ interface CodeProps{
 export const CodeQuestionid = ({params}:CodeProps) =>{
 
     return (
-        <div> 
+        <div className="container_codeQuestion"> 
            <Table_text question="" responseJS="" responseTS="" methods="" /> 
-         <CodeEditor params={params.id}/>
+           <CodeEditor params={params.id}/>
         </div>
     )
 }

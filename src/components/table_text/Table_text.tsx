@@ -47,8 +47,8 @@ export const Table_text = ({ question, responseJS, responseTS, methods }: Table)
   };
 
   return (
-    <StyledBox sx={{ width: '50%' }} >
-      <StyledBox style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', position: 'relative' }} sx={{ borderBottom: 1, borderColor: 'divider', borderTop: 1 }}>
+    <StyledBox sx={{ width: '100%' }} >
+      <StyledBox style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', position: 'relative' }} sx={{ borderBottom: 0, borderColor: 'divider', borderTop: 0}}>
         <StyledTabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <StyledTab label="Desafio" {...a11yProps(0)} />
           <StyledTab label="Respostas em JS" {...a11yProps(1)} />
