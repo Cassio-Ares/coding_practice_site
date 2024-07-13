@@ -27,7 +27,7 @@ export const LanguageSelector = ({languageType, onSelect}:LanguageSelectorProps)
   return (
     <S.Box>
       <S.FormControl>
-        <S.InputLabel id="demo-simple-select-label">Linguagem</S.InputLabel>
+        <S.InputLabel id="demo-simple-select-label">Selecione a Linguagem</S.InputLabel>
         <S.Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -35,6 +35,7 @@ export const LanguageSelector = ({languageType, onSelect}:LanguageSelectorProps)
           label="Linguagem"
           onChange={handleChange}
         >
+          
           {languageArray.map((language, index) => (
             <S.MenuItem key={index} value={language[0]}>
               {language[0]} <span style={{ marginLeft: '5px', color: '#ada9a9' }}>{language[1]}</span>

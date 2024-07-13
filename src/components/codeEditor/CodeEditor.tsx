@@ -3,7 +3,7 @@
 import Editor from "@monaco-editor/react"
 import { useRef, useState } from "react"
 import { LanguageSelector } from "../languageSelector/LanguageSelector"
-import { Container_main_text, ContainerEditor, ContainerMain, ContainerRes, Main_Code } from "./style"
+import { ContainerEditor, ContainerMain, ContainerRes, Main_Code } from "./style"
 import { Return } from "../return/Return"
 import { QUESTIONS } from '../questions'
 import { Table_text } from "../table_text/Table_text"
@@ -26,16 +26,14 @@ export const CodeEditor = ({ params }) => {
 
     return (
         <Main_Code>
-            <Container_main_text>
-                <Table_text question={QUESTIONS[params].question} responseJS="" responseTS="" methods="" />
-            </Container_main_text>
+         <Table_text question={QUESTIONS[params].question} responseJS="" responseTS="" methods="" /> 
             <ContainerMain>
                 <ContainerEditor>
-                    <div style={{borderBottom:'2px solid #fff'}}>
-                        <LanguageSelector languageType={language} onSelect={onSelectLanguage} />
+                    <div style={{ position:'absolute', zIndex: '2', top:'0'}}>
+                        <LanguageSelector languageType={language} onSelect={onSelectLanguage} />                       
                     </div>
-                    < Editor
-                        height=" 75vh"
+                    < Editor 
+                        height=" 90vh"
                         theme="vs-dark"
                         language={language}
                         defaultValue="// some comment"
@@ -45,7 +43,7 @@ export const CodeEditor = ({ params }) => {
                         value={value}
                         onChange={(value: any) => setValeu(value)} />
                 </ContainerEditor>
-                <Return editorRef={editorRef} language={language} />
+                {/* <Return editorRef={editorRef} language={language} /> */}
             </ContainerMain>
         </Main_Code>
     )

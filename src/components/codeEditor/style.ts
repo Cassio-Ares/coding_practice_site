@@ -1,11 +1,18 @@
 import styled from "@emotion/styled";
-import EditorCd from "@monaco-editor/react";
 
-export const Main_Code = styled.main``;
+export const Main_Code = styled.main`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`;
 
-export const Container_main_text = styled.div``;
+export const ContainerMain = styled.div`
+  width: 50%;
+  border: 3px solid #fff;
+  position: relative;
+  padding-top: 50px;
+`;
 
-export const ContainerMain = styled.div``;
 
 export const ContainerEditor = styled.div``;
 
