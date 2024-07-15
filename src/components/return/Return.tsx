@@ -3,7 +3,6 @@
 import {  useState } from 'react';
 import { executeCode } from '../api';
 import {  Btn_Res, Container_Btn, Container_Res, Container_return } from './styles';
-import { Monaco } from '@monaco-editor/react';
 
 interface ReturnProps{
     editorRef:Monaco | null;
