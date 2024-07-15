@@ -9,10 +9,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
 
-     {/* <CodeEditor params={'0'}/> */}
-     <Table_text
-      question=""
-       methods="" responseJS="" responseTS=""/>
+      <CodeEditor params={1}/> 
     </main>
   );
 }

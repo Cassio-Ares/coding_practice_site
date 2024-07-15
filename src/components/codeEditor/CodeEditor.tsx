@@ -7,14 +7,9 @@ import { Container_select, ContainerRes, Main_Code } from "./style"
 import { Return } from "../return/Return"
 import { QUESTIONS } from '../questions'
 
-interface CodeProps {
-    params: {
-        id: number;
-    }
-}
 
 
-export const CodeEditor = ({ params }: CodeProps) => {
+export const CodeEditor = ({ params }) => {
     const editorRef = useRef<Monaco | null>()
     const [value, setValeu] = useState<string>()
     const [language, setLanguage] = useState<string>('javascript')
@@ -38,10 +33,8 @@ export const CodeEditor = ({ params }: CodeProps) => {
                     height=" 70vh"
                     theme="vs-dark"
                     language={language}
-                    defaultValue="// some comment"
-                    onMount={
-                        onMount
-                    }
+                    defaultValue={QUESTIONS[params][language]}
+                    onMount={ onMount }
                     value={value}
                     onChange={(value: any) => setValeu(value)} />
             <ContainerRes>
