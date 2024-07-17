@@ -48,8 +48,7 @@ export const QUESTIONS: Question[] = [
       }
     ]
   }
- 
-];
+  ];
 
 
 

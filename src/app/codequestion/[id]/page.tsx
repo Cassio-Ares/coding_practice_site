@@ -12,7 +12,7 @@ export const CodeQuestionid = ({params}:CodeProps) =>{
 
     return (
         <div className="container_codeQuestion"> 
-           <Table_text question="" responseJS="" responseTS="" methods="" /> 
+           <Table_text params={params.id} /> 
            <CodeEditor params={params.id}/>
         </div>
     )

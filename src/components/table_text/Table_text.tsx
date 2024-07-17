@@ -1,7 +1,13 @@
 'use client'
 
-import { ReactNode, SyntheticEvent, useState } from 'react';
+import { ReactNode, SyntheticEvent, useEffect, useState } from 'react';
 import { StyledBox, StyledTab, StyledTabs, TabPanelContent } from './styles';
+
+import { Question, QUESTIONS } from '../questions';
+import { Methods } from './components_table/methods/Methods';
+import { Answers } from './components_table/answers/Answers';
+import { QuestionText } from './components_table/question/QuestionText';
+
 
 interface TabPanelProps {
   children?: ReactNode;
@@ -32,19 +38,22 @@ function a11yProps(index: number) {
   };
 }
 
-interface Table {
-  question: string,
-  responseJS: string,
-  responseTS: string,
-  methods: string
-}
-
-export const Table_text = ({ question, responseJS, responseTS, methods }: Table) => {
+export const Table_text = ({ params }) => {
   const [value, setValue] = useState(0);
+  const [data, setData] = useState<Question>()
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+ useEffect(() => {
+   searchingForData(params)
+ }, [params])
+ 
+
+  const searchingForData = (params) =>{
+    setData(QUESTIONS[params])
+  }
 
   return (
     <StyledBox sx={{ width: '100%' }} >
@@ -56,16 +65,13 @@ export const Table_text = ({ question, responseJS, responseTS, methods }: Table)
         </StyledTabs>
       </StyledBox>
       <CustomTabPanel value={value} index={0}>
-        {question}
+       <QuestionText data={data}/>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        {responseJS}
+        <Answers data={data?.solutions} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        {responseTS}
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
-        {methods}
+        <Methods data={data?.methods} />
       </CustomTabPanel>
     </StyledBox>
   );
