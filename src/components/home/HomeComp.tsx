@@ -1,5 +1,5 @@
 'use client'
-import * as S from './styled'
+import { Accordion, AccordionActions, AccordionDetails, AccordionSummary, Button, Container_home, Container_text, Content_home, ExpandMoreIcon, H1, H3 } from './styled'
 
 import * as React from 'react';
 import { QUESTIONS } from '../questions';
@@ -8,37 +8,37 @@ import Link from 'next/link';
 
 export const HomeComp = () => {
   return (
-    <S.Container_home>
-      <S.Container_text>
-        <S.H1>Uma otima maneira para praticar JS e TS</S.H1>
-        <S.H3>Site criado para se praticar logica, metodos e funções das linguagens JS e TS</S.H3>
-        <S.Content_home>
+    <Container_home>
+      <Container_text>
+        <H1>Uma otima maneira para praticar JS</H1>
+        <H3>Aproveite os desafios de logica, metodos e funções da linguagens JS.</H3>
+        <Content_home>
           {
             QUESTIONS.map((question, id) => (
-              <S.Accordion key={id} >
-                <S.AccordionSummary
-                  expandIcon={<S.ExpandMoreIcon />}
+              <Accordion key={id} >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel3-content"
                   id="panel3-header"
                 >
                   {question.title}
-                </S.AccordionSummary>
-                <S.AccordionDetails>
+                </AccordionSummary>
+                <AccordionDetails>
                   {question.question}
-                </S.AccordionDetails>
-                <S.AccordionActions>
+                </AccordionDetails>
+                <AccordionActions>
                   <Link href={`/codequestion/${id}`}>
-                    <S.Button >Ir para o Desafio</S.Button>
+                    <Button >Ir para o Desafio</Button>
                   </Link>
 
-                </S.AccordionActions>
-              </S.Accordion>
+                </AccordionActions>
+              </Accordion>
             ))
           }
 
-        </S.Content_home>
-      </S.Container_text>
-    </S.Container_home>
+        </Content_home>
+      </Container_text>
+    </Container_home>
 
   );
 }

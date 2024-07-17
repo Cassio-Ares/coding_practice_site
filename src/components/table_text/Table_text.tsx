@@ -52,8 +52,7 @@ export const Table_text = ({ question, responseJS, responseTS, methods }: Table)
         <StyledTabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <StyledTab label="Desafio" {...a11yProps(0)} />
           <StyledTab label="Respostas em JS" {...a11yProps(1)} />
-          <StyledTab label="Respostas em TS" {...a11yProps(2)} />
-          <StyledTab label="Metodos para ajudar" {...a11yProps(3)} />
+          <StyledTab label="Metodos para ajudar" {...a11yProps(2)} />
         </StyledTabs>
       </StyledBox>
       <CustomTabPanel value={value} index={0}>

@@ -7,7 +7,10 @@ import AccordionDetailsMUI from "@mui/material/AccordionDetails";
 import ExpandMoreIconMUI from "@mui/icons-material/ExpandMore";
 import ButtonMUI from "@mui/material/Button";
 
-export const Accordion = styled(AccordionMUI)``;
+export const Accordion = styled(AccordionMUI)`
+ background: #7a7474;
+ color: #ededed;
+`;
 
 export const AccordionActions = styled(AccordionActionsMUI)``;
 
@@ -17,12 +20,19 @@ export const AccordionDetails = styled(AccordionDetailsMUI)``;
 
 export const ExpandMoreIcon = styled(ExpandMoreIconMUI)``;
 
-export const Button = styled(ButtonMUI)``;
+export const Button = styled(ButtonMUI)`
+  border: 2px solid #ededed;
+  background:#333;
+
+  &:hover{
+    background:white;
+  }
+`;
 
 export const Container_home = styled.div`
  position: relative;
- background: rgb(51,51,51);
- background: linear-gradient(194deg, rgba(51,51,51,1) 28%, rgba(150,64,159,1) 55%, rgba(79,73,79,1) 71%);
+ background: url('./backCode.jpg') no-repeat;
+ background-size: cover;
  width: 100%;
  height: 100vh;
  overflow: auto;
@@ -31,10 +41,12 @@ export const Container_home = styled.div`
 export const H1 = styled.h1`
   font-size: 55px;
   margin-bottom: 25px;
+  backdrop-filter: blur(10px)
 `;
 
 export const H3 = styled.h3`
   font-size: 25px;
+  backdrop-filter: blur(10px)
 `;
 
 export const Content_home = styled.div`

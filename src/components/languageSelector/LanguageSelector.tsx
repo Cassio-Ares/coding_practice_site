@@ -1,10 +1,11 @@
 'use client'
-import * as S from "./style"
+import { Box, FormControl, InputLabel, MenuItem, Select } from "./style";
 import { useState } from "react";
 import { SelectChangeEvent } from '@mui/material/Select';
 
 //import das linguagens
 import { Languages } from '../language';
+
 
 const languageArray: Array<[string, string]> = Object.entries(Languages) // transforma o obj em um array
 
@@ -25,10 +26,10 @@ export const LanguageSelector = ({languageType, onSelect}:LanguageSelectorProps)
   };
 
   return (
-    <S.Box>
-      <S.FormControl>
-        <S.InputLabel id="demo-simple-select-label">Selecione a Linguagem</S.InputLabel>
-        <S.Select
+    <Box>
+      <FormControl>
+        <InputLabel id="demo-simple-select-label">Linguagem</InputLabel>
+        <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={langType} 
@@ -37,12 +38,12 @@ export const LanguageSelector = ({languageType, onSelect}:LanguageSelectorProps)
         >
           
           {languageArray.map((language, index) => (
-            <S.MenuItem key={index} value={language[0]}>
+            <MenuItem key={index} value={language[0]}>
               {language[0]} <span style={{ marginLeft: '5px', color: '#ada9a9' }}>{language[1]}</span>
-            </S.MenuItem>
+            </MenuItem>
           ))}
-        </S.Select>
-      </S.FormControl>
-    </S.Box>
+        </Select>
+      </FormControl>
+    </Box>
   );
 }

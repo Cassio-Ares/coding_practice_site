@@ -32,8 +32,9 @@ export const FormControl = styled(FormControlMUI)``;
 
 export const Select = styled(SelectMUI)`
 color: #fff;
-margin-left: 230px;
+margin-left: 120px;
 margin-top: -4px;
+border: none;
 &.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: transparent;
     }

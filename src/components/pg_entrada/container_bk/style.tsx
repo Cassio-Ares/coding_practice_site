@@ -5,6 +5,6 @@ export const Container_div = styled.div`
   height: 100vh;
   background: url('./imgJs.jpeg') no-repeat;
   background-size: cover;
-  filter: brightness(1.2) contrast(1.3) sepia(0.3);
+  filter: contrast(1.2);
 `;
 
