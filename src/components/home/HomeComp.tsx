@@ -11,7 +11,7 @@ export const HomeComp = () => {
     <Container_home>
       <Container_text>
         <H1>Uma otima maneira para praticar JS</H1>
-        <H3>Aproveite os desafios de logica, metodos e funções da linguagens JS.</H3>
+        <H3>Aproveite os desafios de lógica, métodos e funções da linguagem JS.</H3>
         <Content_home>
           {
             QUESTIONS.map((question, id) => (
@@ -39,6 +39,5 @@ export const HomeComp = () => {
         </Content_home>
       </Container_text>
     </Container_home>
-
   );
 }

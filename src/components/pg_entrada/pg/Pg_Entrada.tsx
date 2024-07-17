@@ -18,8 +18,7 @@ export const Pg_entrada = () => {
       </ContainerText>
       <Span_btn>
         <Btn_Start/>
-      </Span_btn>
-       
+      </Span_btn>   
       <FigureDiv>
          <Img src={'./app.gif'} alt="apresentação do site"  />
       </FigureDiv> 

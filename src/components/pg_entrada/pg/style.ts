@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
 
-
-
-
 export const ContainerText = styled.div`
  backdrop-filter: blur(8px);
  width: 80%;
