@@ -1,18 +1,18 @@
+
 import { CodeEditor } from "@/components/codeEditor/CodeEditor";
 import { Table_text } from "@/components/table_text/Table_text";
 import './styles.css';
 
 
+const CodeQuestionid = ({ params }) => {
+  const { id } = params;
 
-export const CodeQuestionid = ({params}) =>{
+  return (
+    <div className="container_codeQuestion">
+      <Table_text params={id} />
+      <CodeEditor params={id} />
+    </div>
+  );
+};
 
-    return (
-        <div className="container_codeQuestion"> 
-           <Table_text params={params.id} /> 
-           <CodeEditor params={params.id}/>
-        </div>
-    )
-}
-
-export default CodeQuestionid; 
-
+export default CodeQuestionid;

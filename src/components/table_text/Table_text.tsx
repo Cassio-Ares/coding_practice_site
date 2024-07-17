@@ -9,11 +9,13 @@ import { Answers } from './components_table/answers/Answers';
 import { QuestionText } from './components_table/question/QuestionText';
 
 
+
 interface TabPanelProps {
   children?: ReactNode;
   index: number;
   value: number;
 }
+
 
 function CustomTabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
@@ -38,6 +40,8 @@ function a11yProps(index: number) {
   };
 }
 
+
+
 export const Table_text = ({ params }) => {
   const [value, setValue] = useState(0);
   const [data, setData] = useState<Question>()
@@ -51,7 +55,7 @@ export const Table_text = ({ params }) => {
  }, [params])
  
 
-  const searchingForData = (params) =>{
+  const searchingForData = (params:any) =>{
     setData(QUESTIONS[params])
   }
 

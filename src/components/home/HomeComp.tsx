@@ -7,13 +7,15 @@ import Link from 'next/link';
 
 
 export const HomeComp = () => {
+ console.log(QUESTIONS)
+
   return (
     <Container_home>
       <Container_text>
         <H1>Uma otima maneira para praticar JS</H1>
         <H3>Aproveite os desafios de lógica, métodos e funções da linguagem JS.</H3>
         <Content_home>
-          {
+          {   
             QUESTIONS.map((question, id) => (
               <Accordion key={id} >
                 <AccordionSummary
