@@ -2,13 +2,9 @@ import { CodeEditor } from "@/components/codeEditor/CodeEditor";
 import { Table_text } from "@/components/table_text/Table_text";
 import './styles.css';
 
-interface CodeProps{
-    params:{
-        id:number;
-    }
-}
 
-export const CodeQuestionid = ({params}:CodeProps) =>{
+
+export const CodeQuestionid = ({params}) =>{
 
     return (
         <div className="container_codeQuestion"> 
