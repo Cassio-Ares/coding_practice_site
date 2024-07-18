@@ -13,7 +13,10 @@ export const Container_Btn = styled.div`
   background: #333333;
   box-shadow: inset -5px -5px 6px #1b1b1b,inset 5px 5px 6px #4b4b4b;
   position:relative;
-  
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content:flex-end
 `;
 
 export const Container_Res = styled.div`
@@ -24,11 +27,21 @@ export const Container_Res = styled.div`
 
 export const Btn_Res = styled.button`
  background: #928BF9;
- margin-top: 3px;
- margin-left: 590px;
  padding: 2px 7px;
  border-radius: 5px;
+ margin-right:15px;
+  &:hover{
+    background: #855385;
+  }
+`;
 
+
+
+export const Btn_Resturn = styled.button`
+ background: #928BF9;
+ padding: 2px 7px;
+ border-radius: 5px;
+ margin-right:10px;
   &:hover{
     background: #855385;
   }
