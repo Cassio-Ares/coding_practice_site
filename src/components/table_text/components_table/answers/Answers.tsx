@@ -16,7 +16,7 @@ export const Answers = ({ data }:PropsData) => {
                 <ContainerEditor key={index}>
                 <h4>Exemplo de solução {index + 1}</h4>
                 < Editor
-                    height=" 30vh"
+                    height="35vh"
                     theme="vs-dark"
                     language={'javascript'}
                     defaultValue={solutions}
