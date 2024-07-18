@@ -1,17 +1,16 @@
 'use client'
 
+import { Question } from "@/components/questions";
 import { Container_text } from "./styles"
 
-export const QuestionText = ({ data }) => {
+interface PropsQuestion{
+   title:string,
+   questions:string
+}
 
-    const getTitleAndQuestion = (data) => {
-        return {
-            title: data?.title,
-            question: data?.question
-        };
-    };
 
-    const { title, question } = getTitleAndQuestion(data);
+export const QuestionText = ({ title, questions }:PropsQuestion) => {
+
 
     return (
         <>
@@ -20,7 +19,7 @@ export const QuestionText = ({ data }) => {
                  {title}
                 </h3>
                 <p>
-                 {question}
+                 {questions}
                 </p>
             </Container_text>
         </>

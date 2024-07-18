@@ -1,6 +1,7 @@
-import { HomeComp } from "@/components/home/HomeComp";
+'use client'
+import { HomeComp } from "@/components/homeComponent/HomeComp";
 
-export const HomePage:React.FC = ()=>{
+const HomePage: React.FC = () => {
     return (
         <div>
              <HomeComp/>

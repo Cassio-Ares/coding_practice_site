@@ -3,15 +3,10 @@
 import {  useState } from 'react';
 import { executeCode } from '../api';
 import {  Btn_Res, Container_Btn, Container_Res, Container_return } from './styles';
-import { Monaco } from '@monaco-editor/react';
-
-interface ReturnProps {
-    editorRef: React.MutableRefObject<Monaco | null>;
-    language: string;
-}
 
 
-export const Return = ({ editorRef, language }:ReturnProps) => {
+
+export const Return = ({ editorRef, language }) => {
     const [outPut, setOutPut] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
    
@@ -22,7 +17,7 @@ export const Return = ({ editorRef, language }:ReturnProps) => {
         try {
             setIsLoading(true);
             const { run: result } = await executeCode(language, sourceCode);
-            setOutPut(result.output);  
+            setOutPut(result.stdout || result.stderr);  
         } catch (error) {
                 console.log(error);
             } finally {

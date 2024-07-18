@@ -1,9 +1,14 @@
 'use client'
 
+import { Method } from '@/components/questions';
 import { Container_Methods, Description, Name, Syntax, Title, Usage } from './styles'
 
 
-export const Methods = ({ data }) => {
+interface MethodsPros {
+    data: Method[];
+}
+
+export const Methods = ({ data }:MethodsPros) => {
 
     return (
         <>

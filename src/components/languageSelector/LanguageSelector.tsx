@@ -3,11 +3,10 @@ import { Box, FormControl, InputLabel, MenuItem, Select } from "./style";
 import { useState } from "react";
 import { SelectChangeEvent } from '@mui/material/Select';
 
-//import das linguagens
 import { Languages } from '../language';
 
 
-const languageArray: Array<[string, string]> = Object.entries(Languages) // transforma o obj em um array
+const languageArray: Array<[string, string]> = Object.entries(Languages) 
 
 interface LanguageSelectorProps{
   languageType:string;
@@ -19,7 +18,7 @@ export const LanguageSelector = ({languageType, onSelect}:LanguageSelectorProps)
   const [langType, setLangType] = useState(languageType);
 
  
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange =  (event: SelectChangeEvent<unknown>) => {
     const selectedLanguage = event.target.value as string;
     setLangType(selectedLanguage);
     onSelect(selectedLanguage);

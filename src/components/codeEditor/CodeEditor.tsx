@@ -7,10 +7,12 @@ import { Container_select, ContainerRes, Main_Code } from "./style"
 import { Return } from "../return/Return"
 import { QUESTIONS } from '../questions'
 
+interface CodeProps{
+    params:string
+}
 
-
-export const CodeEditor = ({ params }) => {
-    const editorRef = useRef<Monaco | null>()
+export const CodeEditor = ({ params }:CodeProps) => {
+    const editorRef = useRef()
     const [value, setValeu] = useState<string>()
     const [language, setLanguage] = useState<string>('javascript')
 

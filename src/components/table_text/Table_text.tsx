@@ -3,7 +3,7 @@
 import { ReactNode, SyntheticEvent, useEffect, useState } from 'react';
 import { StyledBox, StyledTab, StyledTabs, TabPanelContent } from './styles';
 
-import { Question, QUESTIONS } from '../questions';
+import { Method, Question, QUESTIONS } from '../questions';
 import { Methods } from './components_table/methods/Methods';
 import { Answers } from './components_table/answers/Answers';
 import { QuestionText } from './components_table/question/QuestionText';
@@ -44,38 +44,46 @@ function a11yProps(index: number) {
 
 export const Table_text = ({ params }) => {
   const [value, setValue] = useState(0);
-  const [data, setData] = useState<Question>()
+  const [titleData, setTitleData] = useState<string>()
+  const [questionData, setQuestionData] = useState<string>()
+  const [solutionsData, setSolutionData] = useState<string[]>()
+  const [methodsData, setmethodsData] = useState<Method[]>()
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
- useEffect(() => {
-   searchingForData(params)
- }, [params])
- 
+  useEffect(() => {
+    searchingForData(params)
+  }, [params])
 
-  const searchingForData = (params:any) =>{
-    setData(QUESTIONS[params])
+
+  const searchingForData = (params: any) => {
+    let { id, title, question, javascript, solutions, methods } = QUESTIONS[params]
+    setTitleData(title)
+    setQuestionData(question)
+    setSolutionData(solutions)
+    setmethodsData(methods)
+
   }
 
   return (
     <StyledBox sx={{ width: '100%' }} >
-      <StyledBox style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', position: 'relative' }} sx={{ borderBottom: 0, borderColor: 'divider', borderTop: 0}}>
+      <StyledBox style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', position: 'relative' }} sx={{ borderBottom: 0, borderColor: 'divider', borderTop: 0 }}>
         <StyledTabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <StyledTab label="Desafio" {...a11yProps(0)} />
           <StyledTab label="Respostas em JS" {...a11yProps(1)} />
           <StyledTab label="Metodos para ajudar" {...a11yProps(2)} />
         </StyledTabs>
       </StyledBox>
-      <CustomTabPanel value={value} index={0}>
-       <QuestionText data={data}/>
-      </CustomTabPanel>
+       <CustomTabPanel value={value} index={0}>
+        {titleData && <QuestionText title={titleData} questions={questionData} />}
+      </CustomTabPanel> 
       <CustomTabPanel value={value} index={1}>
-        <Answers data={data?.solutions} />
+      {solutionsData &&  <Answers data={solutionsData} />}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <Methods data={data?.methods} />
+       {methodsData &&  <Methods data={methodsData} />}
       </CustomTabPanel>
     </StyledBox>
   );

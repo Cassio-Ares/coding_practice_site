@@ -3,10 +3,12 @@ import React from 'react'
 import Editor, { Monaco } from "@monaco-editor/react"
 import { ContainerEditor } from './styles'
 
+interface PropsData{
+    data: string[];
+}
 
-export const Answers = ({ data }) => {
-
-
+export const Answers = ({ data }:PropsData) => {
+    console.log(typeof data)
     return (
         <>
         {

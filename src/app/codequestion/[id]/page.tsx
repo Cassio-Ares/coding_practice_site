@@ -1,10 +1,16 @@
+'use client'
 
 import { CodeEditor } from "@/components/codeEditor/CodeEditor";
 import { Table_text } from "@/components/table_text/Table_text";
 import './styles.css';
 
+interface ParamsPros{
+  params:{
+    id:string
+  }
+}
 
-const CodeQuestionid = ({ params }) => {
+const CodeQuestionid = ({ params }:ParamsPros) => {
   const { id } = params;
 
   return (
