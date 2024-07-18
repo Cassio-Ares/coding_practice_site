@@ -1,6 +1,6 @@
 # Bem-vindo ao [Coding Practice Site](https://coding-practice-site.vercel.app/)
 
-![Site em Construção](./app.gif)
+![Site em Construção](./public/app.gif)
 
 ## 🚧 Site em Construção 🚧
 
