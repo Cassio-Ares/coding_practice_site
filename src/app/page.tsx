@@ -1,6 +1,5 @@
 'use client'
 
-import { CodeEditor } from "@/components/codeEditor/CodeEditor";
 import styles from "./page.module.css";
 import { Pg_entrada } from "@/components/pg_entrada/pg/Pg_Entrada";
 

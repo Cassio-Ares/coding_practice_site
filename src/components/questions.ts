@@ -22,7 +22,7 @@ export const QUESTIONS: Question[] = [
       "Dado um array de números, encontre o índice do número 10. Se não estiver presente, retorne -1.",
     javascript: `const arrNum=[1,5,8,10,25,9,15,88];\n\nconst findTheNumber=(arr,num)=>{\n\t\n};\n\nconsole.log(findTheNumber(arrNum,10)) // resposta 3\nconsole.log(findTheNumber(arrNum,2)) // resposta -1`,
     solutions: [
-      `const array = [5, 3, 7, 10, 2];\nconsole.log(meetNumber(array)); // Saída: 3`,
+      `const meetNumber1=(arr)=>{\nfor(let i=0;i<arr.length;i++){\n\tif(arr[i]===num){\n\t\treturn i;\n}}\nreturn -1;\n};\n\nconst array=[5,3,7,10,2];\n\nconsole.log(meetNumber1(array,10));// Saída: 3 `,
       `const meetNumber = (arr) => {\n  return arr.findIndex(num => num === 10);\n};\nconst array = [5, 3, 7, 10, 2];\nconsole.log(meetNumber(array)); // Saída: 3`,
       `const meetNumber = (arr) => {\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] === 10) {\n      return i;\n    }\n  }\n  return -1;\n};\nconst array = [5, 3, 7, 10, 2];\nconsole.log(meetNumber(array)); // Saída: 3`,
     ],
