@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { executeCode } from '../api';
 import { Btn_Res, Btn_Resturn, Container_Btn, Container_Res, Container_return } from './styles';
 import Link from 'next/link';
+import { Alert_return } from '../alert/Alert_return';
 
 
 
@@ -37,7 +38,6 @@ export const Return = ({ editorRef, language }) => {
                         {isLoading ? 'Voltando as desafios ...' : 'Voltar aos desafios'}
                     </Btn_Resturn>
                 </Link>
-
             </Container_Btn>
 
             <Container_Res>
