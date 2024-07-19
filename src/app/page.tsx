@@ -1,6 +1,5 @@
 'use client'
 
-import { Alert_return } from "@/components/alert/Alert_return";
 import styles from "./page.module.css";
 import { Pg_entrada } from "@/components/pg_entrada/pg/Pg_Entrada";
 
