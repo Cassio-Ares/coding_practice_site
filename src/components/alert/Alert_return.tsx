@@ -11,7 +11,7 @@ export const Alert_return = () => {
                     <Container_btn_alert>
                         <Link href={'/home'}>
                             <ButtonAlert color="inherit" size="small">
-                                Return para home
+                                Retorno para home
                             </ButtonAlert>
                         </Link>
                         <ButtonNext color="inherit" size="small">
